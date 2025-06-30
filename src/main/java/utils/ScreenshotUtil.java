@@ -20,7 +20,7 @@ public class ScreenshotUtil {
 
         // Capture full page screenshot with scroll
         Screenshot fullPage = new AShot()
-                .shootingStrategy(ShootingStrategies.viewportPasting(100)) // scrolls every 100 ms
+                .shootingStrategy(ShootingStrategies.viewportPasting(ShootingStrategies.scaling(1.25f),100)) // scrolls every 100 ms
                 .takeScreenshot(driver);
 
         Path screenshotsDir = Path.of(System.getProperty("user.dir"), "screenshots");

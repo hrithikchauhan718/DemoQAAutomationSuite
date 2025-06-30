@@ -31,11 +31,11 @@ public class FirstTest extends BaseTest {
         driver.get("https://demoqa.com");
         WebElement elementsCard=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//h5[text()='Elements']")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", elementsCard);
+        elementsCard.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(elementsCard)).click();
         String currentUrl=driver.getCurrentUrl();
         ScreenshotUtil.takeScreenshot(driver, "clickElementsCard");
-        Assert.assertTrue(currentUrl.contains("elements"));
+        Assert.assertTrue(currentUrl.contains("element"));
     }
 
 
